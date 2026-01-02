@@ -1,0 +1,89 @@
+.hero {
+  position: relative;
+  height: 75vh; /* smaller hero banner */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(46, 125, 50, 0.35); /* green overlay */
+}
+
+.content {
+  position: absolute;
+  color: white;
+  max-width: 400px;
+  text-align: left;
+  padding: 20px;
+  background: rgba(46, 125, 50, 0.25); /* green transparent box */
+  border-radius: 10px;
+}
+
+.content.right {
+  right: 30px;
+  left: auto;
+  text-align: right;
+}
+
+.content.left {
+  left: 30px;
+  right: auto;
+  text-align: left;
+}
+
+.content h1 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #dcedc8; /* light green text */
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2e7d32; /* dark green button */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #388e3c; /* medium green hover */
+}
+
+/* Arrow Navigation */
+.arrows {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.arrow:hover {
+  color: #a5d6a7; /* light green on hover */
+}
