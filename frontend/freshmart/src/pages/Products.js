@@ -123,3 +123,12 @@ export default function Products() {
     </div>
   );
 }
+
+
+// import ProductList from '../components/ProductList';
+
+// function Products() {
+//   return <ProductList />;
+// }
+
+// export default Products;

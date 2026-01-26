@@ -7,25 +7,20 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const productRoutes = require("./routes/productRoute");
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
 
 app.use("/api/auth", require("./routes/authRoute"));
 app.use("/api/products", require("./routes/productRoute"));
 app.use("/api/orders", require("./routes/orderRoute"));
-const path = require("path");
-
 app.use("/uploads", express.static("uploads"));
+app.use("/api/admin", require("./routes/adminRoute"));
+app.use("/api/admin/products", require("./routes/adminProductRoute"));
+app.use("/api/admin/orders", require("./routes/adminOrderRoute"));
+app.use("/api/admin/users", require("./routes/adminUserRoute"));
 
-const orderRoutes = require("./routes/orderRoute");
-app.use("/api/orders", orderRoutes);
-
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log(err));
-
-app.get("/", (req, res) => {
-  res.send("FreshMart API Running");
-});
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

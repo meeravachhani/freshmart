@@ -39,146 +39,93 @@ body {
   justify-content: center;
   margin-top: 30px;
 }
-/* 
-.card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  text-align: center;
-}
-.card img {
-  width: 150px;
-  height: 120px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.card button {
-  background: green;
-  color: white;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: darkgreen;
-} */
-
-
-/* =============2 design */
-/* .cart-page {
-  padding: 50px 20px;
-  background: #e8f5e9;
-}
-
-.cart-page h2 {
-  color: #2e7d32;
-  margin-bottom: 30px;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-bottom: 1px solid #ccc;
-  padding: 15px 10px;
-  background: #ffffff;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.cart-item img {
-  width: 80px;
-  border-radius: 10px;
-}
-
-.cart-item-details h4 {
-  margin: 0;
-  color: #2e7d32;
-}
-
-.cart-item-details p {
-  margin: 3px 0;
-  color: #4caf50;
-}
-
-.cart-item-actions button {
-  background-color: #2e7d32;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin: 0 3px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.cart-item-actions button:hover {
-  background-color: #388e3c;
-}
-
-.total {
-  margin-top: 20px;
-  color: #2e7d32;
-} */
-/* ===========over */
+/* ===============================
+   FRESHMART CART – LIGHT THEME
+================================ */
 
 .cart-wrapper {
-  min-height: 80vh;
+  min-height: 100vh;
+  background: #f4fdf6;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 30px;
-  background: #eafaf1;
+  padding: 40px 10px;
 }
 
 .cart-page {
   width: 100%;
-  max-width: 850px;
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(46, 204, 113, 0.15);
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .cart-page h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #27ae60;
+  color: #2e7d32;
+  font-size: 28px;
 }
 
+/* Empty cart */
 .empty {
   text-align: center;
-  color: #7f8c8d;
+  font-size: 18px;
+  color: #777;
+}
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: -6px;
+  background: #dc3545;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
+/* Order success message */
+.order-msg {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Cart item */
 .cart-item {
   display: grid;
-  grid-template-columns: 80px 1fr 140px 100px;
+  grid-template-columns: 80px 1fr auto auto;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   padding: 15px 0;
-  border-bottom: 1px solid #dff5ea;
+  border-bottom: 1px solid #eee;
 }
 
 .cart-item img {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #eafaf1;
+  border-radius: 12px;
+  border: 1px solid #ddd;
 }
 
 .cart-item-details h4 {
   margin: 0;
-  color: #2c3e50;
+  color: #333;
+  font-size: 18px;
 }
 
 .cart-item-details p {
-  margin: 4px 0;
-  color: #27ae60;
-  font-weight: bold;
+  margin: 5px 0 0;
+  color: #666;
 }
 
+/* Quantity buttons */
 .cart-item-actions {
   display: flex;
   align-items: center;
@@ -186,31 +133,57 @@ body {
 }
 
 .cart-item-actions button {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border: none;
-  background: #2ecc71;
-  color: white;
-  border-radius: 8px;
+  background: #2e7d32;
+  color: #fff;
   font-size: 18px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s ease;
 }
 
 .cart-item-actions button:hover {
-  background: #27ae60;
-  transform: scale(1.05);
+  background: #1b5e20;
 }
 
 .cart-item-actions span {
-  font-weight: bold;
-  color: #2c3e50;
+  font-weight: 600;
 }
 
+/* Item total */
 .cart-item strong {
-  text-align: right;
-  color: #2c3e50;
+  color: #2e7d32;
+  font-size: 16px;
 }
+
+/* Total */
+.total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 22px;
+  color: #2e7d32;
+}
+
+/* Order button */
+.order-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  opacity: 0.9;
+}
+
+
 
 .total {
   text-align: right;
@@ -250,4 +223,626 @@ body {
   text-align: center;
   margin-bottom: 15px;
   font-weight: bold;
+}
+
+/* ======================================================================== */
+/* ===================================================================== */
+/* Custom styles for FreshMart */
+/* 3D Style for Login Form */
+.login-bg {
+  min-height: 100vh;
+
+  /* Two background images */
+  background-image:
+    url(/public/images/bg2.png),
+    url(/public/images/bg1.png);
+
+  background-repeat: no-repeat, no-repeat;
+
+  /* Positioning */
+  background-position:
+    left top,
+    right bottom;
+
+  /* Size control */
+  background-size:
+    320px,
+    360px;
+
+  background-color: #f8f9fa;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .login-bg {
+    background-size: 200px, 220px;
+  }
+}
+
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  background: linear-gradient(145deg, #ffffff, #e8f5e8, #f0f8f0); /* Subtle gradient for depth */
+  border-radius: 15px;
+ box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.3), /* Deep outer shadow */
+    0 8px 20px rgba(40, 167, 69, 0.3), /* Green accent glow */
+    0 4px 10px rgba(34, 197, 94, 0.1), /* Lime inner glow */
+    inset 0 2px 0 rgba(255, 255, 255, 0.9); /* Highlight for 3D lift */
+  transform: perspective(1000px) rotateX(2deg); /* Slight 3D tilt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: perspective(1000px) rotateX(0deg) translateY(-5px); /* Lift on hover */
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 128, 0, 0.2);
+}
+
+.form-control {
+  border: 2px solid #28a745; /* Green border */
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #218838;
+  box-shadow: 
+    0 0 10px rgba(40, 167, 69, 0.5), /* Glowing border */
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #28a745, #20c997); /* Gradient button */
+  border: none;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); /* 3D shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.card-title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .login-card {
+    transform: none; /* Remove tilt on mobile for better usability */
+  }
+}
+
+/* Unique 3D Style for Register Form with Full Green Theme */
+.register-card-unique {
+  max-width: 450px;
+  width: 100%;
+  background: linear-gradient(145deg, #ffffff, #e8f5e8, #f0f8f0); /* Green-tinted gradients for depth */
+  border-radius: 20px;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.3), /* Deep outer shadow */
+    0 8px 20px rgba(40, 167, 69, 0.3), /* Green accent glow */
+    0 4px 10px rgba(34, 197, 94, 0.1), /* Lime inner glow */
+    inset 0 2px 0 rgba(255, 255, 255, 0.9); /* Highlight for 3D lift */
+  transform: perspective(1200px) rotateX(5deg) rotateY(-2deg); /* Unique angled tilt */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.register-card-unique::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, rgba(40, 167, 69, 0.1), rgba(34, 197, 94, 0.1)); /* Green glow */
+  border-radius: 25px;
+  z-index: -1;
+  filter: blur(10px); /* Soft glow effect */
+}
+
+.register-card-unique:hover {
+  transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(-10px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 12px 30px rgba(40, 167, 69, 0.4), /* Green glow on hover */
+    0 6px 15px rgba(34, 197, 94, 0.2);
+}
+
+.input-3d {
+  border: 3px solid #28a745; /* Green border */
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.1), /* Inner depth */
+    0 2px 8px rgba(40, 167, 69, 0.2); /* Green outer glow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.input-3d:focus {
+  border-color: #218838; /* Darker green on focus */
+  box-shadow: 
+    0 0 15px rgba(40, 167, 69, 0.6), /* Green pulsing glow */
+    inset 0 3px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px); /* Slight lift on focus */
+}
+
+.register-btn-unique {
+  background: linear-gradient(135deg, #28a745, #20c997); /* Green to lime gradient */
+  border: none;
+  color: white;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.5); /* Green shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-btn-unique::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.register-btn-unique:hover::after {
+  width: 300px;
+  height: 300px; /* Ripple effect */
+}
+
+.register-btn-unique:hover {
+  transform: translateY(-3px) rotateX(5deg); /* 3D button lift */
+  box-shadow: 0 10px 25px rgba(40, 167, 69, 0.7); /* Enhanced green shadow */
+}
+
+.pulse-btn {
+  animation: pulse 2s infinite; /* Subtle pulse animation */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 6px 18px rgba(40, 167, 69, 0.5); } /* Green pulse */
+  50% { box-shadow: 0 6px 18px rgba(40, 167, 69, 0.8); }
+  100% { box-shadow: 0 6px 18px rgba(40, 167, 69, 0.5); }
+}
+
+.card-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Enhanced text depth */
+  transform: perspective(500px) rotateX(-2deg); /* Slight text tilt */
+}
+
+/* Responsive: Reduce 3D effects on small screens */
+@media (max-width: 576px) {
+  .register-card-unique {
+    transform: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .register-card-unique:hover {
+    transform: translateY(-5px);
+  }
+  .input-3d:focus {
+    transform: none;
+  }
+}
+
+
+
+
+/* admin login css start  */
+/* Full page center */
+.admin-login-page {
+  min-height: 100vh;
+  /* background: #ededed; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.admin-login-card {
+  width: 420px;
+  background: #f2fbf2;
+  padding: 35px 30px;
+  border-radius: 20px;
+  border: 1px solid #cce7d5;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.admin-login-card h2 {
+  text-align: center;
+  color: #1f9d55;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+.admin-login-card label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs */
+.admin-login-card input {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 2px solid #2fbf71;
+  padding: 0 15px;
+  font-size: 16px;
+  margin-bottom: 22px;
+  outline: none;
+}
+
+.admin-login-card input::placeholder {
+  color: #6b7280;
+}
+
+.admin-login-card input:focus {
+  border-color: #1f9d55;
+}
+
+/* Login button */
+.admin-login-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #22c55e, #10b981);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.admin-login-btn:hover {
+  opacity: 0.92;
+}
+
+
+/* admin regestration css start  */
+/* Page center */
+.admin-register-page {
+  min-height: 100vh;
+  /* background: #ededed; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.admin-register-card {
+  width: 400px;
+  background: #f2fbf2;
+  padding: 35px 30px;
+  border-radius: 20px;
+  border: 1px solid #cce7d5;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.admin-register-card h2 {
+  text-align: center;
+  color: #1f9d55;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+.admin-register-card label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs */
+.admin-register-card input {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 2px solid #2fbf71;
+  padding: 0 15px;
+  font-size: 16px;
+  margin-bottom: 22px;
+  outline: none;
+}
+
+.admin-register-card input::placeholder {
+  color: #6b7280;
+}
+
+.admin-register-card input:focus {
+  border-color: #1f9d55;
+}
+
+/* Button */
+.admin-register-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #22c55e, #10b981);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.admin-register-btn:hover {
+  opacity: 0.92;
+}
+
+
+
+/* =====start ADMIN DASHBOARD root css===== */
+.admin-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3fdf7, #e9f7ef);
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== HEADER ===== */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  color: #1e8449;
+  font-weight: 700;
+}
+
+.dashboard-header button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dashboard-header button:hover {
+  background: #c0392b;
+}
+
+/* ===== ADMIN INFO ===== */
+.admin-info {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* ===== STATS CARDS ===== */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-cards .card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
+  font-weight: 600;
+  color: #145a32;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-cards .card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== QUICK ACTIONS ===== */
+.quick-actions {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.quick-actions button {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(39, 174, 96, 0.3);
+}
+
+.quick-actions button:hover {
+  background: linear-gradient(135deg, #1e8449, #27ae60);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+  }
+}
+/* admindeshbord end css */
+
+
+/* admin user css */
+.admin-users {
+  max-width: 1000px;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-header h5 {
+  font-weight: 600;
+}
+
+/* order css */
+.admin-orders {
+  max-width: 1100px;
+}
+
+
+/* start order display user frontend */
+/* Page background */
+body {
+  background: linear-gradient(135deg, #f0fdf4, #e6f7ef);
+}
+
+/* Main container */
+.orders-container {
+  background: #ffffff;
+  border-radius: 16px;
+}
+
+/* Title */
+.orders-title {
+  text-align: center;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 30px;
+}
+
+/* No orders text */
+.no-orders {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* Orders grid */
+.orders-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* Order card */
+.order-card {
+  background: #f8f9fa;
+  border-radius: 14px;
+  padding: 20px;
+  border-left: 6px solid #198754;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-id {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Total */
+.order-total {
+  margin: 12px 0;
+  font-size: 1.05rem;
+}
+
+/* Products list */
+.order-products {
+  padding-left: 18px;
+  margin-bottom: 12px;
+}
+
+.order-products li {
+  font-size: 0.95rem;
+  color: #343a40;
+}
+
+/* Date */
+.order-date {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+/* Status badge */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status colors */
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.processing {
+  background: #cfe2ff;
+  color: #084298;
+}
+
+.status.shipped {
+  background: #cff4fc;
+  color: #055160;
+}
+
+.status.delivered {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status.cancelled {
+  background: #f8d7da;
+  color: #842029;
+}
+.orders-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: "Segoe UI", sans-serif;
 }

@@ -1,72 +1,274 @@
-// import { useState } from "react";
-// import "./HomeProducts.css";
+// import React, { useEffect, useState } from "react";
+// import API from "../services/api";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
-// const products = [
-//   { id: 1, name: "Tomato", price: "₹50/kg", image: "/images/products/tomato.jpg" },
-//   { id: 2, name: "Apple", price: "₹120/kg", image: "/images/products/apple.jpg" },
-//   { id: 3, name: "Potato", price: "₹250/pack", image: "/images/products/potato.jpg" },
-//   { id: 4, name: "Onion", price: "₹60/kg", image: "/images/products/onion.jpg" },
-//   { id: 5, name: "Bananas", price: "₹40/dozen", image: "/images/products/bananas.jpg" },
-//   { id: 6, name: "Eggs", price: "₹120/12pcs", image: "/images/products/eggs.jpg" },
-//   { id: 7, name: "Tomatoes", price: "₹30/kg", image: "/images/products/tomatoes.jpg" },
-//   { id: 8, name: "Milk", price: "₹45/litre", image: "/images/products/milk.jpg" },
-//   { id: 9, name: "Wheat Flour", price: "₹35/kg", image: "/images/products/wheat.jpg" },
-// ];
+// export default function HomeProducts() {
+//   const [products, setProducts] = useState([]);
 
-// function HomeProducts() {
-//   const [cart, setCart] = useState([]);
+//   // 🔹 Fetch only first 3–4 products
+//   useEffect(() => {
+//     const fetchHomeProducts = async () => {
+//       try {
+//         const res = await API.get("/products");
+//         setProducts(res.data.slice(0, 4));
+//       } catch (err) {
+//         console.error("Error fetching products", err);
+//       }
+//     };
 
+//     fetchHomeProducts();
+//   }, []);
+
+//   // 🔹 Add to cart
 //   const addToCart = (product) => {
-//     setCart([...cart, product]);
-//     alert(`${product.name} added to cart!`);
+//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//     const existing = cart.find((item) => item._id === product._id);
+
+//     if (existing) {
+//       existing.qty += 1;
+//     } else {
+//       cart.push({
+//         _id: product._id,
+//         name: product.name,
+//         price: product.price,
+//         image: product.image,
+//         qty: 1,
+//       });
+//     }
+
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     alert(`${product.name} added to cart`);
 //   };
 
 //   return (
-//     <div className="home-products">
-//       <h2>Our Fresh Picks</h2>
-//       <div className="products-grid">
+//     <div className="container my-5">
+//       <h2 className="text-center mb-4">Our Fresh Picks</h2>
+
+//       <div className="row row-cols-1 row-cols-md-3 g-4">
 //         {products.map((product) => (
-//           <div key={product.id} className="product-card">
-//             <div className="product-image">
-//               <img src={product.image} alt={product.name} />
+//           <div className="col" key={product._id}>
+//             <div className="card h-100 shadow-sm">
+//               {/* ✅ IMAGE FIX */}
+//               <img
+//                 src={`http://localhost:5000/${product.image.replace(
+//                   /^\/?/,
+//                   ""
+//                 )}`}
+//                 className="card-img-top"
+//                 alt={product.name}
+//                 style={{ height: "200px", objectFit: "cover" }}
+//                 onError={(e) => {
+//                   e.target.src = "/no-image.png";
+//                 }}
+//               />
+
+//               <div className="card-body text-center">
+//                 <h5 className="card-title">{product.name}</h5>
+//                 <p className="fw-bold text-success">₹{product.price}</p>
+//               </div>
+
+//               <div className="card-footer bg-white border-0 text-center">
+//                 <button
+//                   className="btn btn-success w-100"
+//                   onClick={() => addToCart(product)}
+//                 >
+//                   Add to Cart
+//                 </button>
+//               </div>
 //             </div>
-//             <h4>{product.name}</h4>
-//             <p className="price">{product.price}</p>
-//             <button onClick={() => addToCart(product)}>Add to Cart</button>
 //           </div>
 //         ))}
+
+//         {products.length === 0 && (
+//           <p className="text-center">No products found</p>
+//         )}
 //       </div>
 //     </div>
 //   );
 // }
 
-// export default HomeProducts;
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import API from "../services/api";
+// import { useNavigate } from "react-router-dom";
+// import "bootstrap/dist/css/bootstrap.min.css";
+
+// export default function HomeProducts() {
+//   const [products, setProducts] = useState([]);
+//   const navigate = useNavigate();
+
+//   // 🔹 Categories (FROM public/images)
+//   const categories = [
+//     { name: "Vegetables", img: "/images/vegetabless.jpg" },
+//     { name: "Fruits", img: "/images/fruitss.jpg" },
+//     { name: "Masala", img: "/images/masala.jpg" },
+//     { name: "Atta", img: "/images/atta.jpg" },
+//     { name: "Rice", img: "/images/rice.jpg" },
+//     { name: "Dry Fruits", img: "/images/dryfruits.jpg" },
+//     { name: "Oils & Ghee", img: "/images/oil&ghee.jpg" },
+//     { name: "Dairy & Bakery", img: "/images/dairy&bakery.jpg" },
+//     { name: "Beverages", img: "/images/beverages.jpg" },
+//     { name: "Snacks & Packaged Food", img: "/images/snack.jpg" },
+//     { name: "Chocolates & Confectionery", img: "/images/chocolate.jpg" },   
+//     { name: "Household & Personal Care", img: "/images/dryfruits.jpg" },
+
+
+//   ];
+
+//   // 🔹 Fetch products
+//   useEffect(() => {
+//     const fetchProducts = async () => {
+//       try {
+//         const res = await API.get("/products");
+//         setProducts(res.data.slice(0, 4)); // show only 4
+//       } catch (err) {
+//         console.error("Error fetching products", err);
+//       }
+//     };
+
+//     fetchProducts();
+//   }, []);
+
+//   // 🔹 Add to cart
+//   const addToCart = (product) => {
+//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+//     const existing = cart.find((item) => item._id === product._id);
+
+//     if (existing) {
+//       existing.qty += 1;
+//     } else {
+//       cart.push({
+//         _id: product._id,
+//         name: product.name,
+//         price: product.price,
+//         image: product.image,
+//         qty: 1,
+//       });
+//     }
+
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     alert(`${product.name} added to cart`);
+//   };
+
+//   return (
+//     <div className="container my-5">
+
+//       {/* 🔥 CATEGORY SECTION */}
+//       <h2 className="text-center mb-4">Shop by Category</h2>
+
+//       <div className="row text-center mb-5">
+//         {categories.map((cat) => (
+//           <div
+//             key={cat.name}
+//             className="col-4 col-md-2 mb-3"
+//             style={{ cursor: "pointer" }}
+//             onClick={() =>
+//               navigate(`/products?category=${cat.name}`)
+//             }
+//           >
+//             <div className="p-3 shadow-sm rounded bg-white h-100">
+//               <img
+//                 src={cat.img}
+//                 alt={cat.name}
+//                 style={{
+//                   width: "160px",
+//                   height: "160px",
+//                   objectFit: "contain",
+//                 }}
+//               />
+//               <p className="mt-2 fw-semibold">{cat.name}</p>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* 🔥 PRODUCTS SECTION */}
+//       <h2 className="text-center mb-4">Our Fresh Picks</h2>
+
+//       <div className="row row-cols-1 row-cols-md-4 g-4">
+//         {products.map((product) => (
+//           <div className="col" key={product._id}>
+//             <div className="card h-100 shadow-sm">
+//               <img
+//                 src={`http://localhost:5000${product.image}`}
+//                 className="card-img-top"
+//                 alt={product.name}
+//                 style={{ height: "180px", objectFit: "cover" }}
+//                 onError={(e) => (e.target.src = "/images/no-image.png")}
+//               />
+
+//               <div className="card-body text-center">
+//                 <h5 className="card-title">{product.name}</h5>
+//                 <p className="fw-bold text-success">₹{product.price}</p>
+//               </div>
+
+//               <div className="card-footer bg-white border-0">
+//                 <button
+//                   className="btn btn-success w-100"
+//                   onClick={() => addToCart(product)}
+//                 >
+//                   Add to Cart
+//                 </button>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//     </div>
+//   );
+// }
+
+
+
+
 
 import React, { useEffect, useState } from "react";
 import API from "../services/api";
-import "./HomeProducts.css";
+import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function HomeProducts() {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
-  // 🔹 Fetch products from backend (LIMIT 4)
+  // 🔹 Categories (FROM public/images)
+  const categories = [
+    { name: "Vegetables", img: "/images/vegetabless.jpg" },
+    { name: "Fruits", img: "/images/fruitss.jpg" },
+    { name: "Masala", img: "/images/masala.jpg" },
+    { name: "Atta", img: "/images/atta.jpg" },
+    { name: "Rice", img: "/images/rice.jpg" },
+    { name: "Dry Fruits", img: "/images/dryfruits.jpg" },
+    { name: "Oils & Ghee", img: "/images/oil&ghee.jpg" },
+    { name: "Dairy & Bakery", img: "/images/dairy&bakery.jpg" },
+    { name: "Beverages", img: "/images/beverages.jpg" },
+    { name: "Snacks & Packaged Food", img: "/images/snack.jpg" },
+    { name: "Chocolates & Confectionery", img: "/images/chocolate.jpg" },
+    { name: "Household & Personal Care", img: "/images/household.jpg" },
+  ];
+
+  // 🔹 Fetch products
   useEffect(() => {
-    const fetchHomeProducts = async () => {
+    const fetchProducts = async () => {
       try {
         const res = await API.get("/products");
         setProducts(res.data.slice(0, 4)); // show only 4 products
       } catch (err) {
-        console.error("Error fetching home products", err);
+        console.error("Error fetching products", err);
       }
     };
 
-    fetchHomeProducts();
+    fetchProducts();
   }, []);
 
-  // 🔹 Add to Cart (SAME STRUCTURE AS CART PAGE)
+  // 🔹 Add to cart
   const addToCart = (product) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
     const existing = cart.find((item) => item._id === product._id);
 
     if (existing) {
@@ -75,7 +277,7 @@ export default function HomeProducts() {
       cart.push({
         _id: product._id,
         name: product.name,
-        price: product.price, // number
+        price: product.price,
         image: product.image,
         qty: 1,
       });
@@ -86,28 +288,73 @@ export default function HomeProducts() {
   };
 
   return (
-    <div className="home-products">
-      <h2>Our Fresh Picks</h2>
+    <div className="container my-5">
 
-      <div className="products-grid">
-        {products.map((product) => (
-          <div key={product._id} className="product-card">
-            <div className="product-image">
-              <img
-                src={`http://localhost:5000${product.image}`}
-                alt={product.name}
-              />
+      {/* 🔥 CATEGORY SECTION */}
+      <h2 className="text-center mb-4">Shop by Category</h2>
+
+      <div className="row text-center mb-5 g-3 justify-content-center">
+        {categories.map((cat) => (
+          <div
+            key={cat.name}
+            className="col-6 col-sm-4 col-md-2"
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate(`/products?category=${cat.name}`)}
+          >
+            <div className="p-3 shadow-sm rounded bg-white h-100">
+              <div
+                style={{
+                  width: "120px",
+                  height: "120px",
+                  margin: "0 auto",
+                }}
+              >
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="img-fluid"
+                  style={{ maxHeight: "100%", objectFit: "contain" }}
+                />
+              </div>
+              <p className="mt-2 fw-semibold">{cat.name}</p>
             </div>
-
-            <h4>{product.name}</h4>
-            <p className="price">₹{product.price}</p>
-
-            <button onClick={() => addToCart(product)}>
-              Add to Cart
-            </button>
           </div>
         ))}
       </div>
+
+      {/* 🔥 PRODUCTS SECTION */}
+      <h2 className="text-center mb-4">Our Fresh Picks</h2>
+
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        {products.map((product) => (
+          <div className="col" key={product._id}>
+            <div className="card h-100 shadow-sm">
+              <img
+                src={`http://localhost:5000${product.image}`}
+                className="card-img-top p-3"
+                alt={product.name}
+                style={{ height: "150px", objectFit: "contain" }}
+                onError={(e) => (e.target.src = "/images/no-image.png")}
+              />
+
+              <div className="card-body text-center">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="fw-bold text-success">₹{product.price}</p>
+              </div>
+
+              <div className="card-footer bg-white border-0">
+                <button
+                  className="btn btn-success w-100"
+                  onClick={() => addToCart(product)}
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }

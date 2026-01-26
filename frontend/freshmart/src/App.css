@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* =============hpme product css */
+/* CATEGORY SECTION */
+.category-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 15px 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.category-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.category-card:hover {
+  background: #d4edda;
+  transform: translateY(-5px);
+}
+
+/* PRODUCT CARDS */
+.product-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.product-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
