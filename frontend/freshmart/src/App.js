@@ -15,6 +15,8 @@ import AdminOrders from "./admin/AdminOrders";
 import AdminUsers from "./admin/AdminUsers";
 import AddProduct from "./admin/AddProduct";
 import EditProduct from "./admin/EditProduct";
+import Wishlist from "./pages/Wishlist";
+import ProductDetails from "./pages/ProductDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./index.css";
@@ -41,7 +43,8 @@ function App() {
   <Route path="/admin/users" element={<AdminUsers />} />
   <Route path="/admin/products/add" element={<AddProduct />} />
 <Route path="/admin/products/edit/:id" element={<EditProduct />} />
-
+<Route path="/wishlist" element={<Wishlist />} />
+<Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
     </>
   );

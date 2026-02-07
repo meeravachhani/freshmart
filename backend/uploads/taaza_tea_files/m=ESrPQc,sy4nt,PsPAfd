@@ -1,0 +1,14 @@
+loaded_h_0(function(_){var window=this;
+_.v("ESrPQc");
+_.JFi=new _.Tf(_.o1a);
+_.w();
+_.NFi=_.y("PsPAfd",[_.o1a,_.r1a]);
+_.v("PsPAfd");
+var PFi=function(a,b,c){b!==0&&(a.oa.has(b)?a.oa.get(b).push(c):a.oa.set(b,[c]))},QFi=class{constructor(a){this.oa=a}};var RFi=async function(a,{Sgb:b,Zf:c,productViewerMetadata:d,HD:e,rob:f=""}){var g=(0,_.Rf)(),h=g();g=g(1);try{const k=_.A(a.oa,4)?g(await h(a.Aa())):[],l={Zf:c,Sgb:b,nBe:_.zj(a.oa,7),productViewerMetadata:d,XEe:k,HD:e,rob:f,yjb:a};g(await h(a.pka.uAb(l)))}finally{h()}},SFi=class extends _.ds{static Sa(){return{jsdata:{Zxd:_.OFi},service:{pka:_.JFi,G7a:_.KFi}}}constructor(a){super(a.Oa);this.Aa=async()=>_.kh(this.oa,_.xT,1,_.mh()).length?_.kh(this.oa,_.xT,1,_.mh(_.Pi)):Promise.all(Array.from(this.getRoot().el().querySelectorAll("[data-pv-entrypoint]"),
+b=>this.yc(b,_.Bo))).then(b=>b.map(c=>c.Cc()));this.pka=a.service.pka;this.G7a=a.service.G7a;this.oa=_.p(a.jsdata.Zxd,_.zT,1);this.flags=a.jsdata.Zxd.VF();this.pka.Vqe(this.flags);this.Ba=new QFi(this.Aa);PFi(this.G7a,_.zj(this.oa,7),this.Ba);this.addOnDisposeCallback(()=>{var b=this.G7a,c=_.zj(this.oa,7),d=this.Ba;c!==0&&b.oa.has(c)&&(b=b.oa.get(c),d=b.indexOf(d,0),d>-1&&b.splice(d,1))})}async Ca(a){var b=(0,_.Rf)(),c=b();b=b(1);try{let d;const e=((d=a.data)==null?void 0:d.HD)||a.targetElement;let f;
+const g=((f=a.data)==null?void 0:f.Zf)||_.Ne(this.Ia("B1641c").el());let h;const k=((h=a.data)==null?void 0:h.rob)||"",l=this.Cc(a);if(!l)return!0;b(await c(RFi(this,{Sgb:!1,Zf:g,productViewerMetadata:l,HD:e,rob:k})))}finally{c()}}async Da(a){var b=(0,_.Rf)(),c=b();b=b(1);try{const d=a.data.mBe,e=a.data.query,f=_.Ne(this.getRoot().el());let g=null;const h=b(await c(this.Aa()));for(const k of h){const l=(new _.lFi(e,k)).getKey();if(d.getKey()===l){g=k;break}}g&&b(await c(RFi(this,{Sgb:!0,Zf:f,HD:a.targetElement,
+productViewerMetadata:g})))}finally{c()}}Cc(a){var b;if((b=a.data)==null?0:b.productViewerMetadata)return a.data.productViewerMetadata;b=a.targetElement;a:switch(_.hm(b.getData("pvgMetadataKey"))){case 1:a=1;break a;case 2:a=2;break a;default:a=0}b=_.ri(b.getData("pvgMetadataValue"));if(a!==0&&b)for(const d of _.kh(this.oa,_.xT,1,_.mh())){a:{switch(a){case 1:var c=_.ch(d,1);break a;case 2:c=_.ch(d,2);break a}c=void 0}if(c===b)return d}return null}};SFi.prototype.$wa$bCGqS=function(){return this.Da};
+SFi.prototype.$wa$egvsmc=function(){return this.Ca};_.fs(_.NFi,SFi);
+_.w();
+});
+// Google Inc.

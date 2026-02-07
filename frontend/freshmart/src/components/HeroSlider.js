@@ -1,82 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import "./HeroSlider.css";
-
-// const slides = [
-//   {
-//     image: "/images/vegetables.jpg",
-//     title: "Fresh Vegetables",
-//     subtitle: "Farm fresh • Handpicked daily • 100% natural",
-//     align: "left",
-//   },
-//   {
-//     image: "/images/fruits.jpg",
-//     title: "Seasonal Fruits",
-//     subtitle: "Naturally sweet • Juicy • Full of vitamins",
-//     align: "right",
-//   },
-//   {
-//     image: "/images/dairy.jpg",
-//     title: "Dairy & Eggs",
-//     subtitle: "Pure milk • Fresh eggs • Daily essentials",
-//     align: "left",
-//   },
-//   {
-//     image: "/images/staples.jpg",
-//     title: "Grains & Staples",
-//     subtitle: "Rice • Wheat • Pulses • Quality assured",
-//     align: "right",
-//   },
-// ];
-
-// function HeroSlider() {
-//   const [index, setIndex] = useState(0);
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setIndex((prev) => (prev + 1) % slides.length);
-//     }, 10000);
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   const prevSlide = () => {
-//     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
-//   };
-
-//   const nextSlide = () => {
-//     setIndex((prev) => (prev + 1) % slides.length);
-//   };
-
-//   return (
-//     <div
-//       className="hero"
-//       style={{ backgroundImage: `url(${slides[index].image})` }}
-//     >
-//       <div className="overlay"></div>
-
-//       <div className={`content ${slides[index].align}`}>
-//         <h1>{slides[index].title}</h1>
-//         <p>{slides[index].subtitle}</p>
-//         <button onClick={() => navigate("/products")}>Shop Now</button>
-//       </div>
-
-//       {/* Arrow Navigation */}
-//       <div className="arrows">
-//         <span className="arrow left" onClick={prevSlide}>
-//           &#10094;
-//         </span>
-//         <span className="arrow right" onClick={nextSlide}>
-//           &#10095;
-//         </span>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default HeroSlider;
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -112,7 +33,7 @@ export default function HeroSlider() {
     <div
       id="heroCarousel"
       className="carousel slide carousel-fade"
-      data-bs-ride="carousel"
+     
     >
       <div className="carousel-inner">
         {slides.map((slide, idx) => (
@@ -124,14 +45,57 @@ export default function HeroSlider() {
               src={slide.image}
               className="d-block w-100"
               alt={slide.title}
-              style={{ maxHeight: "500px", objectFit: "cover" }}
+              style={{
+                height: "70vh",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
             />
-            <div className="carousel-caption d-none d-md-block">
-              <h3>{slide.title}</h3>
-              <p>{slide.subtitle}</p>
+
+            <div
+              className="carousel-caption d-none d-md-block"
+              style={{
+                backgroundColor: "rgba(0, 0, 0, 0.55)",
+                borderRadius: "12px",
+                padding: "24px",
+                bottom: "22%",
+                left: "10%",
+                right: "10%",
+                textAlign: "center",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "3rem",
+                  fontWeight: "bold",
+                  color: "#fff",
+                  textShadow: "2px 2px 6px rgba(0,0,0,0.8)",
+                  marginBottom: "10px",
+                }}
+              >
+                {slide.title}
+              </h3>
+
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  color: "#f1f1f1",
+                  textShadow: "1px 1px 4px rgba(0,0,0,0.8)",
+                  marginBottom: "20px",
+                }}
+              >
+                {slide.subtitle}
+              </p>
+
               <button
-                className="btn btn-success"
+                className="btn btn-success btn-lg"
                 onClick={() => navigate("/products")}
+                style={{
+                  fontSize: "1.2rem",
+                  padding: "10px 24px",
+                  borderRadius: "6px",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                }}
               >
                 Shop Now
               </button>
@@ -140,25 +104,31 @@ export default function HeroSlider() {
         ))}
       </div>
 
-      {/* Carousel Controls */}
+      {/* 🔁 Controls */}
       <button
         className="carousel-control-prev"
         type="button"
         data-bs-target="#heroCarousel"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
+        <span className="carousel-control-prev-icon"></span>
       </button>
+
       <button
         className="carousel-control-next"
         type="button"
         data-bs-target="#heroCarousel"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
+        <span className="carousel-control-next-icon"></span>
       </button>
     </div>
   );
 }
+
+
+
+
+
+
+

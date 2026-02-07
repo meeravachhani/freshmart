@@ -1,24 +1,22 @@
 import HeroSlider from "../components/HeroSlider";
 import HomeProducts from "../components/HomeProducts";
+import HomeRecentlyViewed from "../components/HomeRecentlyViewed";
+import OffersSection from "../components/OffersSection";
+import FeaturedProducts from "../components/FeaturedProducts";
+import NewArrivals from "../components/NewArrivals";
+
 function Home() {
   return (
     <div>
       <HeroSlider />
       <HomeProducts />
+       <HomeRecentlyViewed /> 
+      <OffersSection />
+        <FeaturedProducts />
+      <NewArrivals />
     </div>
   );
 }
 
 export default Home;
 
-
-// function Home() {
-//   return (
-//     <div className="container mt-4 text-center">
-//       <h1 className="display-4">Welcome to FreshMart</h1>
-//       <p className="lead">Shop fresh groceries and vegetables online with ease.</p>
-//     </div>
-//   );
-// }
-
-// export default Home;
