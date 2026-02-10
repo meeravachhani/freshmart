@@ -1,3 +1,11 @@
+const addWishlist = async (id) => {
+  await API.post(`/wishlist/${id}`, {}, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+};
+
+
+
 export default function ProductCard({ product, addToCart }) {
   return (
     <div className="card">
@@ -7,6 +15,9 @@ export default function ProductCard({ product, addToCart }) {
       <button onClick={() => addToCart(product)}>
         Add to Cart
       </button>
+      <button onClick={() => addWishlist(product._id)} className="btn btn-outline-danger">
+  ❤️ Wishlist
+</button>
     </div>
   );
 }

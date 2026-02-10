@@ -95,6 +95,24 @@ const productSchema = new mongoose.Schema({
     default: "",
   },
   // 🔥 NEW: DISCOUNT PERCENTAGE
+ ratings: [
+      {
+        userId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        value: {
+          type: Number,
+          min: 1,
+          max: 5,
+        },
+      },
+    ],
+      averageRating: {
+      type: Number,
+      default: 0,
+    },
+  
 
   createdAt: {
     type: Date,
@@ -103,3 +121,96 @@ const productSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Product", productSchema);
+
+
+
+
+
+
+
+
+// import mongoose from "mongoose";
+
+// const productSchema = new mongoose.Schema(
+//   {
+//     name: { type: String, required: true },
+//     description: { type: String },
+//     category: {
+//       type: String,
+//       required: true,
+//       // ❌ REMOVE enum to avoid crash with old data
+//     },
+//     image: { type: String },
+//     price: {
+//       type: Number,
+//       required: true,
+//     },
+
+//     // 🔥 OFFER
+//     isOffer: {
+//       type: Boolean,
+//       default: false,
+//     },
+
+//     discountPrice: {
+//       type: Number,
+//       default: null,
+//     },
+
+//     discountPercent: {
+//       type: Number,
+//       default: null,
+//     },
+
+//     offerTag: {
+//       type: String,
+//       default: "",
+//     },
+
+//     quantity: {
+//       type: Number,
+//       default: 1,
+//     },
+
+//     // ⭐ RATINGS (SAFE)
+//     ratings: {
+//       type: [
+//         {
+//           userId: {
+//             type: mongoose.Schema.Types.ObjectId,
+//             ref: "User",
+//           },
+//           value: Number,
+//         },
+//       ],
+//       default: [],
+//     },
+
+//     averageRating: {
+//       type: Number,
+//       default: 0,
+//     },
+
+//     ratingCount: {
+//       type: Number,
+//       default: 0,
+//     },
+//   },
+//   { timestamps: true }
+// );
+
+// // 🔹 AUTO CALCULATE OFFER PRICE
+// productSchema.pre("save", function (next) {
+//   if (
+//     this.isOffer &&
+//     this.discountPercent &&
+//     !this.discountPrice
+//   ) {
+//     this.discountPrice = Math.round(
+//       this.price - (this.price * this.discountPercent) / 100
+//     );
+//   }
+//   next();
+// });
+
+// export default mongoose.model("Product", productSchema);

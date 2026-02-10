@@ -513,6 +513,30 @@ body {
 .product-card:hover .product-image {
   transform: scale(1.05);
 }
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #000;
+  font-size: 16px;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff3f6c;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
 
 
 /* ❤️ Wishlist */
@@ -1123,6 +1147,27 @@ body {
   color: #555;
   line-height: 1.6;
 }
+
+.product-main-img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.recommend-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.recommend-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
 
 /* Mobile */
 @media (max-width: 768px) {

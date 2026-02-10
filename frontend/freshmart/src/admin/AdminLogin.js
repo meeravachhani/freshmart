@@ -13,14 +13,15 @@ export default function AdminLogin() {
     try {
       const res = await API.post("/auth/login", { email, password });
 
-      if (res.data.role !== "admin") {
+      if (res.data.user.role !== "admin") {
         alert("Access denied: Not an admin");
         return;
       }
 
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role);
-
+      localStorage.setItem("role", res.data.user.role);
+      localStorage.setItem("userId", res.data.user._id);
+      
       navigate("/admin/dashboard");
     } catch (err) {
       alert("Invalid admin credentials");

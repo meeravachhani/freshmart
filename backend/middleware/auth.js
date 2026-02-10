@@ -1,3 +1,28 @@
+// const jwt = require("jsonwebtoken");
+
+// module.exports = (req, res, next) => {
+//   try {
+//     let token = req.header("Authorization");
+
+//     if (!token) {
+//       return res.status(401).json({ message: "No token provided" });
+//     }
+
+//     if (token.startsWith("Bearer ")) {
+//       token = token.slice(7);
+//     }
+
+//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+//     // ✅ FIX HERE
+//     req.user = { id: decoded.id || decoded._id };
+
+//     next();
+//   } catch (err) {
+//     return res.status(401).json({ message: "Invalid token" });
+//   }
+// };
+
 const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
@@ -14,12 +39,10 @@ module.exports = (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // ✅ FIX HERE
-    req.user = { id: decoded.id || decoded._id };
+    req.user = decoded; // ✅ IMPORTANT
 
     next();
   } catch (err) {
     return res.status(401).json({ message: "Invalid token" });
   }
 };
-

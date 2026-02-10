@@ -4,3 +4,37 @@
   background-color: #cee8ce;
 
 }
+/* Navbar background (if needed) */
+/* .navcolor {
+  background-color: #ffffff;
+} */
+
+/* 🔴 NUMBER BADGE */
+.nav-badge {
+  position: absolute;
+  top: 4px;
+  right: -10px;
+  background: #28a745; /* green */
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ❤️ Wishlist badge (red) */
+.wishlist-badge {
+  background: #28a745;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .nav-badge {
+    right: -5px;
+  }
+}
