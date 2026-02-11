@@ -12,6 +12,7 @@ export default function AdminLogin() {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", { email, password });
+       console.log("LOGIN RESPONSE 👉", res.data); // 🔥 ADD THIS
 
       if (res.data.user.role !== "admin") {
         alert("Access denied: Not an admin");
@@ -19,8 +20,8 @@ export default function AdminLogin() {
       }
 
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.user.role);
-      localStorage.setItem("userId", res.data.user._id);
+      localStorage.setItem("role", res.data.role);
+      localStorage.setItem("userId", res.data.userId);
       
       navigate("/admin/dashboard");
     } catch (err) {

@@ -1,14 +1,17 @@
 const Product = require("../models/Product");
 
 // 👉 ADD PRODUCT
-exports.createProduct = (req, res) => {
-  Product.create(req.body)
-    .then((product) => {
-      res.status(201).json(product);
-    })
-    .catch((error) => {
-      res.status(400).json({ message: error.message });
+exports.createProduct = async (req, res) => {
+  try {
+    const product = await Product.create({
+      ...req.body,
+      image: req.file.filename, // ✅ FIX
     });
+
+    res.status(201).json(product);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 };
 
 // 👉 GET ALL PRODUCTS

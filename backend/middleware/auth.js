@@ -22,10 +22,10 @@
 //     return res.status(401).json({ message: "Invalid token" });
 //   }
 // };
-
 const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
   try {
     let token = req.header("Authorization");
 
@@ -39,10 +39,9 @@ module.exports = (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    req.user = decoded; // ✅ IMPORTANT
-
+    req.user = await User.findById(decoded.id).select("-password");
     next();
   } catch (err) {
-    return res.status(401).json({ message: "Invalid token" });
+    res.status(401).json({ message: "Invalid token" });
   }
 };
