@@ -12,18 +12,34 @@ export default function AdminLogin() {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", { email, password });
-       console.log("LOGIN RESPONSE 👉", res.data); // 🔥 ADD THIS
 
-      if (res.data.user.role !== "admin") {
-        alert("Access denied: Not an admin");
-        return;
-      }
+      //  console.log("LOGIN RESPONSE 👉", res.data); // 🔥 ADD THIS
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role);
-      localStorage.setItem("userId", res.data.userId);
+      // if (res.data.user.role !== "admin") {
+      //   alert("Access denied: Not an admin");
+      //   return;
+      // }
+
+      // localStorage.setItem("token", res.data.token);
+      // localStorage.setItem("role", res.data.role);
+      // localStorage.setItem("userId", res.data.userId);
       
-      navigate("/admin/dashboard");
+      // navigate("/admin/dashboard");
+      console.log("LOGIN RESPONSE 👉", res.data);
+
+const role = res.data.user.role; // ✅ correct path
+
+if (role !== "admin") {
+  alert("Access denied: Not an admin");
+  return;
+}
+
+localStorage.setItem("token", res.data.token);
+localStorage.setItem("role", role);        // ✅ MUST be "admin"
+localStorage.setItem("userId", res.data.userId);
+
+navigate("/admin/dashboard");
+
     } catch (err) {
       alert("Invalid admin credentials");
     }

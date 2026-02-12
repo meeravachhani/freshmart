@@ -345,11 +345,11 @@ export default function AddProduct() {
             required
           >
             <option value="">Select Offer Type</option>
-            <option value="fresh-vegetables">Fresh Vegetables</option>
+            <option value="fresh-vegetables">Fresh Vegetables & fruits</option>
             <option value="fruits-offer">Fruits Bonanza</option>
             <option value="daily-essentials">Daily Essentials</option>
-            <option value="Atta">Atta</option>
-            <option value="Rice">Rice</option>
+            {/* <option value="Atta">Atta</option> */}
+            {/* <option value="Rice">Rice</option> */}
 
           </select>
         </>

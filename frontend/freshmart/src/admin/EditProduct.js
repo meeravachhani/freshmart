@@ -10,7 +10,7 @@ export default function EditProduct() {
     name: "",
     price: "",
     category: "",
-    stock: "",
+    quantity: "",
     description: "",
   });
 
@@ -53,9 +53,9 @@ export default function EditProduct() {
         placeholder="Category" />
 
       <input className="form-control mb-2"
-        value={form.stock}
-        onChange={e => setForm({...form, stock: e.target.value})}
-        placeholder="Stock" />
+        value={form.quantity}
+        onChange={e => setForm({...form, quantity: e.target.value})}
+        placeholder="quantity" />
 
       <textarea className="form-control mb-2"
         value={form.description}
