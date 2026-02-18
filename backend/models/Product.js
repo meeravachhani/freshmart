@@ -112,7 +112,7 @@
 //       type: Number,
 //       default: 0,
 //     },
-  
+
 
 //   createdAt: {
 //     type: Date,
@@ -153,7 +153,11 @@ const productSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
-
+    unit: {
+      type: String,
+      enum: ["kg", "gram", "liter", "ml", "piece"],
+      required: true,
+    },
     description: {
       type: String,
       maxlength: 500,

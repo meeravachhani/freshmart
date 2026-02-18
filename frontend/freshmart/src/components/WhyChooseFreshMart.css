@@ -1,0 +1,22 @@
+.why-section {
+  background: linear-gradient(180deg, #eafff1, #ffffff);
+  border-radius: 18px;
+  padding: 30px 20px;
+}
+
+.why-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 35px rgba(40, 167, 69, 0.25);
+}
+
+.why-icon {
+  font-size: 42px;
+}

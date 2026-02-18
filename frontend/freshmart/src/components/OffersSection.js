@@ -67,16 +67,16 @@ export default function OffersSection() {
 
   const offers = [
     {
-      title: "Fresh Vegetables",
-      desc: "Flat 20% OFF Today",
+      title: "Fresh Vegetables & Fruits",
+      desc: "up to 20% OFF ",
       img: "/images/vegetabless.jpg",
       color: "offer-green",
       offerTag: "fresh-vegetables",
     },
     {
       title: "Fruits Bonanza",
-      desc: "Buy 1 Get 1 Free",
-      img: "/images/fruitss.jpg",
+      desc: "up to 30% OFF",
+      img: "/images/atta.jpg",
       color: "offer-orange",
       offerTag: "fruits-offer",
     },

@@ -554,14 +554,25 @@ export default function ProductDetails() {
     <div className="container my-5">
       {/* ================= PRODUCT DETAILS ================= */}
       <div className="row g-5 align-items-center">
-        {/* IMAGE */}
+        {/* IMAGE
         <div className="col-md-5 text-center">
           <img
             src={`http://localhost:5000${product.image}`}
             className="img-fluid rounded-4 shadow-lg"
             alt={product.name}
           />
-        </div>
+        </div> */}
+        {/* IMAGE */}
+<div className="col-md-5 text-center">
+  <div className="product-image-wrapper">
+    <img
+      src={`http://localhost:5000${product.image}`}
+      alt={product.name}
+      className="product-image-fixed"
+    />
+  </div>
+</div>
+
 
         {/* DETAILS */}
         <div className="col-md-7">
@@ -645,7 +656,7 @@ export default function ProductDetails() {
                 <div className="card h-100 border-0 shadow-sm">
                   <img
                     src={`http://localhost:5000${item.image}`}
-                    className="card-img-top"
+                    className="recommended-image"
                     alt={item.name}
                     style={{ cursor: "pointer" }}
                     onClick={() =>

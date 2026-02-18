@@ -248,10 +248,10 @@ export default function Products() {
         {offer
           ? "🔥 Offer Products"
           : search
-          ? `Search results for "${search}"`
-          : category
-          ? category
-          : "All Products"}
+            ? `Search results for "${search}"`
+            : category
+              ? category
+              : "All Products"}
       </h2>
 
       <div className="products-grid">
@@ -265,18 +265,18 @@ export default function Products() {
             product.discountPrice ||
             (product.discountPercent
               ? Math.round(
-                  originalPrice -
-                    (originalPrice * product.discountPercent) / 100
-                )
+                originalPrice -
+                (originalPrice * product.discountPercent) / 100
+              )
               : originalPrice);
 
           const percentOff = product.discountPercent
             ? product.discountPercent
             : product.isOffer
-            ? Math.round(
+              ? Math.round(
                 ((originalPrice - offerPrice) / originalPrice) * 100
               )
-            : 0;
+              : 0;
 
           return (
             <div key={product._id} className="product-card">
@@ -306,20 +306,28 @@ export default function Products() {
               <h4 className="product-name">{product.name}</h4>
 
               {/* 💰 PRICE DISPLAY (Meesho style) */}
-              {product.isOffer ? (
-                <p className="product-price">
-                  <span className="new-price">
-                    ₹{offerPrice}
-                  </span>{" "}
-                  <span className="old-price">
+              <div>
+                {product.isOffer ? (
+                  <p className="product-price">
+                    <span className="new-price">
+                      ₹{offerPrice}
+                    </span>{" "}
+                    <span className="old-price">
+                      ₹{originalPrice}
+                    </span>
+                  </p>
+                ) : (
+                  <p className="product-price">
                     ₹{originalPrice}
-                  </span>
+                  </p>
+
+                )}
+                {/* <br/> */}
+              
+              </div>
+  <p className="product-qty">
+                  {product.quantity} {product.unit}
                 </p>
-              ) : (
-                <p className="product-price">
-                  ₹{originalPrice}
-                </p>
-              )}
 
               <button
                 className="add-btn"

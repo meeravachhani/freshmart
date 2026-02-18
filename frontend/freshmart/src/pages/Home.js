@@ -4,6 +4,8 @@ import HomeRecentlyViewed from "../components/HomeRecentlyViewed";
 import OffersSection from "../components/OffersSection";
 import FeaturedProducts from "../components/FeaturedProducts";
 import NewArrivals from "../components/NewArrivals";
+import WhyChooseFreshMart from "../components/WhyChooseFreshMart";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -14,6 +16,8 @@ function Home() {
       <OffersSection />
         <FeaturedProducts />
       <NewArrivals />
+       <WhyChooseFreshMart />
+       <Footer />
     </div>
   );
 }

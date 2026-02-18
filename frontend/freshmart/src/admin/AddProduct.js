@@ -79,7 +79,7 @@
 //     description: "",
 //     isOffer: false,
 //     offerTag: "",
-     
+
 //   });
 
 //   const [image, setImage] = useState(null);
@@ -109,7 +109,7 @@
 //         description: "",
 //         isOffer: false,
 //         offerTag: "",
-         
+
 //       });
 //       setImage(null);
 //     } catch (err) {
@@ -223,6 +223,7 @@ export default function AddProduct() {
     price: "",
     category: "",
     quantity: "",
+    unit:"",
     description: "",
     isOffer: false,
     offerTag: "",
@@ -247,10 +248,10 @@ export default function AddProduct() {
 
     try {
       await API.post("/admin/products", data, {
-  headers: {
-    "Content-Type": "multipart/form-data",
-  },
-});
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       alert("Product added successfully ✅");
 
@@ -259,6 +260,7 @@ export default function AddProduct() {
         price: "",
         category: "",
         quantity: "",
+        unit:"",
         description: "",
         isOffer: false,
         offerTag: "",
@@ -288,12 +290,38 @@ export default function AddProduct() {
         required
       />
 
-      <input className="form-control mb-2"
+      {/* <input className="form-control mb-2"
         placeholder="Category"
         value={form.category}
         onChange={(e) => setForm({ ...form, category: e.target.value })}
         required
-      />
+      /> */}
+
+<select
+            // className="form-select mb-3"
+            className="form-control"
+            value={form.category}            
+            onChange={(e) =>
+              setForm({ ...form, category: e.target.value })
+            }
+            required
+            
+          >
+            <option value="">Select category</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Masala">Masala</option>
+            <option value="Atta">Atta</option>
+            <option value="Rice">Rice</option>
+            <option value="Dry Fruits">Dry Fruits</option>
+            <option value="Oils Ghee">Oils & Ghee</option>
+            <option value="Dairy Bakery">Dairy & Bakery</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Snacks">Snacks</option>           
+            <option value="household cleaning">household & cleaning</option>
+            <option value="personal care">personal care</option>
+          </select>
+
 
       <input className="form-control mb-2" type="number"
         placeholder="Quantity"
@@ -301,6 +329,19 @@ export default function AddProduct() {
         onChange={(e) => setForm({ ...form, quantity: e.target.value })}
         required
       />
+      <select
+        value={form.unit}
+        placeholder="unit"
+        onChange={(e) => setForm({ ...form,unit: e.target.value})}
+        className="form-control"
+      >
+        <option value="">Select Unit</option>
+        <option value="kg">Kg</option>
+        <option value="gram">Gram</option>
+        <option value="liter">Liter</option>
+        <option value="ml">ML</option>
+        <option value="piece">Piece</option>
+      </select>
 
       <textarea className="form-control mb-3"
         placeholder="Description"
@@ -348,9 +389,7 @@ export default function AddProduct() {
             <option value="fresh-vegetables">Fresh Vegetables & fruits</option>
             <option value="fruits-offer">Fruits Bonanza</option>
             <option value="daily-essentials">Daily Essentials</option>
-            {/* <option value="Atta">Atta</option> */}
-            {/* <option value="Rice">Rice</option> */}
-
+           
           </select>
         </>
       )}

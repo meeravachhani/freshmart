@@ -1,8 +1,0 @@
-loaded_h_0(function(_){var window=this;
-_.v("xuEXkc");
-var mZx=function(a,b){if(lZx(a,b.getIndex()))return b.getIndex()===a.Ba-1?[b]:(a=a.oa.get(b.getIndex()+1))?[b,a]:[b];const c=a.oa.get(b.getIndex()-1);return b.getIndex()===a.Ba?[b]:c?[c,b]:[b]},lZx=function(a,b){return b<a.Ba?b%2===0:(b-a.Ba)%2===0};
-_.Sr(_.kZx,class extends _.ti{constructor(){super();this.Ea=-1;this.oa=new Map;this.Aa=this.getData("tc").Mb();this.Ba=_.Kd(this.getData("ie"),0)}hC(a){this.oa.has(a.getIndex())&&(this.Ea===-1&&(this.Ea=this.oa.size),a.zEb(this.Ea+a.getIndex()));this.oa.set(a.getIndex(),a)}Da(a){var b;((b=this.oa.get(a.getIndex()-1))==null?0:b.uC())&&a.fmc(!0);b=this.oa.get(a.getIndex()+1);if(b==null?0:b.uC())b==null||b.fmc(!0);this.Aa&&mZx(this,a).forEach(c=>{c.gCd(!0)})}Ca(a){a.fmc(!1);let b;(b=this.oa.get(a.getIndex()+
-1))==null||b.fmc(!1);this.Aa&&(a=mZx(this,a),a.length>1&&a.every(c=>!c.uC())&&a.forEach(c=>{c.gCd(!1)}))}t8a(a,b){this.Aa&&mZx(this,a).forEach(c=>{c.t8a(b,lZx(this,c.getIndex()))})}Ha(a){return this.Aa?mZx(this,a).filter(b=>b.getIndex()!==a.getIndex()).some(b=>!b.uC()):!1}});
-_.w();
-});
-// Google Inc.

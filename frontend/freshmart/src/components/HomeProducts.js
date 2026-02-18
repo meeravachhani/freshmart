@@ -147,10 +147,12 @@ export default function HomeProducts() {
     { name: "Atta", img: "/images/atta.jpg" },
     { name: "Rice", img: "/images/rice.jpg" },
     { name: "Dry Fruits", img: "/images/dryfruits.jpg" },
-    { name: "Oils & Ghee", img: "/images/oil&ghee.jpg" },
-    { name: "Dairy & Bakery", img: "/images/dairy&bakery.jpg" },
+    { name: "Oils Ghee", img: "/images/oil&ghee.jpg" },
+    { name: "Dairy Bakery", img: "/images/dairy&bakery.jpg" },
     { name: "Beverages", img: "/images/beverages.jpg" },
     { name: "Snacks", img: "/images/snack.jpg" },
+    { name: "household cleaning", img: "/images/house.jpg" },
+    { name: "personal care", img: "/images/personal_care.jpg" },
   ];
 
   const scroll = (dir) => {
