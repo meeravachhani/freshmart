@@ -38,3 +38,35 @@
     right: -5px;
   }
 }
+
+
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  min-width: 180px;
+  padding: 6px;
+  z-index: 999;
+}
+
+.custom-dropdown.right {
+  right: 0;
+  left: auto;
+}
+
+.custom-dropdown button {
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 10px;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.custom-dropdown button:hover {
+  background: #f2f2f2;
+}

@@ -1,20 +1,3 @@
-// const express = require("express");
-// const auth = require("../middleware/auth");
-// const admin = require("../middleware/admin");
-// const Product = require("../models/Product");
-
-// const router = express.Router();
-
-// // Admin dashboard data
-// router.get("/dashboard", auth, admin, async (req, res) => {
-//   const products = await Product.countDocuments();
-//   res.json({ products });
-// });
-
-// module.exports = router;
-
-
-
 const express = require("express");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");

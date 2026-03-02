@@ -18,21 +18,6 @@ router.get("/", auth, admin, async (req, res) => {
   }
 });
 
-// router.put("/:id/status", auth, admin, async (req, res) => {
-//   try {
-//     const { status } = req.body;
-
-//     const order = await Order.findByIdAndUpdate(
-//       req.params.id,
-//       { status },
-//       { new: true }
-//     );
-
-//     res.json(order);
-//   } catch (err) {
-//     res.status(500).json({ message: "Status update failed" });
-//   }
-// });
 
 // routes/adminOrderRoute.js
 router.put("/:id/status", auth, admin, async (req, res) => {
