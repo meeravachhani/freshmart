@@ -21,6 +21,7 @@ app.use("/api/admin/products", require("./routes/adminProductRoute"));
 app.use("/api/admin/orders", require("./routes/adminOrderRoute"));
 app.use("/api/admin/users", require("./routes/adminUserRoute"));
 
+// app.use("/api/admin/dashboard", require("./routes/adminDashboardRoute"));
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

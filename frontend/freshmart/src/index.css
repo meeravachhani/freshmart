@@ -1212,6 +1212,25 @@ body {
 
 
 /* ================= PRODUCT DETAILS ================= */
+.free-delivery {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #0f9d58;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.free-delivery i {
+  font-size: 12px;
+}
+
+.product-card .badge{
+font-size:12px;
+margin-top:5px;
+
+}
 
 .product-details-card {
   background: #ffffff;

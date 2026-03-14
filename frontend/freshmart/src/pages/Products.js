@@ -202,12 +202,20 @@ export default function Products() {
                 </p>
               ) : (
                 <p className="product-price">₹{originalPrice}</p>
-              )}
-
-              {/* 📦 QUANTITY */}
+                
+              )}              
+             {/* 📦 QUANTITY */}
               <p className="product-qty">
                 {product.quantity} {product.unit}
               </p>
+{/* ✅ FREE DELIVERY */}
+    {/* <span className="badge bg-success">
+      🚚 Free Delivery
+    </span> */}
+
+<div className="free-delivery">
+  <i className="fas fa-truck"></i> Free Delivery
+</div>
 
               {/* 🛒 ADD TO CART */}
               <button

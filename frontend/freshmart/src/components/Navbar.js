@@ -21,7 +21,7 @@ export default function Navbar() {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
   const userId = localStorage.getItem("userId");
-  const userName = localStorage.getItem("userName");
+  // const userName = localStorage.getItem("userName");
 
   // ===== CLOSE DROPDOWN ON OUTSIDE CLICK =====
   useEffect(() => {
@@ -155,7 +155,7 @@ export default function Navbar() {
             </li>
 
             {/* 🛒 CART */}
-            {token && (
+            {/* {token && (
               <li className="nav-item position-relative">
                 <button className="nav-link btn position-relative" onClick={() => go("/cart")}>
                   Cart
@@ -166,10 +166,27 @@ export default function Navbar() {
                   )}
                 </button>
               </li>
-            )}
+            )} */}
+
+           {token && (
+  <li className="nav-item position-relative">
+    <button
+      className="nav-link btn position-relative"
+      onClick={() => go("/cart")}
+    >
+      <i className="fas fa-shopping-cart fs-5"></i>
+
+      {cartCount > 0 && (
+        <span className="nav-badge">
+          {cartCount}
+        </span>
+      )}
+    </button>
+  </li>
+)}
 
             {/* ❤️ WISHLIST */}
-            {token && (
+            {/* {token && (
               <li className="nav-item position-relative">
                 <button className="nav-link btn position-relative" onClick={() => go("/wishlist")}>
                   Wishlist
@@ -180,7 +197,25 @@ export default function Navbar() {
                   )}
                 </button>
               </li>
-            )}
+            )} */}
+
+
+{token && (
+  <li className="nav-item position-relative">
+    <button
+      className="nav-link btn position-relative"
+      onClick={() => go("/wishlist")}
+    >
+      <i className="fas fa-heart fs-5 text-danger"></i>
+
+      {wishlistCount > 0 && (
+        <span className="nav-badge wishlist-badge">
+          {wishlistCount}
+        </span>
+      )}
+    </button>
+  </li>
+)}
 
             {token && (
               <li className="nav-item">
@@ -215,29 +250,31 @@ export default function Navbar() {
             />
           </form>
 
-          {/* PROFILE DROPDOWN */}
+          
+ {/* PROFILE ICON */}
           {token ? (
-            <div ref={profileRef} className="dropdown position-relative">
+            <div ref={profileRef} className="position-relative">
               <button
-                className="btn btn-light dropdown-toggle"
+                className="profile-circle-btn"
                 onClick={() => setProfileOpen(!profileOpen)}
               >
-                👤 {userName || "User"}
+                👤
               </button>
 
               {profileOpen && (
-                <ul className="dropdown-menu show dropdown-menu-end">
-                  <li>
-                    <button className="dropdown-item" onClick={() => go("/profile")}>
+                <div className="custom-dropdown">
+                  {role !== "admin" && (
+                    <button onClick={() => go("/profile")}>
                       View Profile
                     </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item text-danger" onClick={logout}>
-                      Logout
-                    </button>
-                  </li>
-                </ul>
+                  )}
+                  <button
+                    className="text-danger"
+                    onClick={logout}
+                  >
+                    Logout
+                  </button>
+                </div>
               )}
             </div>
           ) : (
