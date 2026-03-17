@@ -151,6 +151,7 @@ export default function EditProduct() {
           <option value="liter">Liter</option>
           <option value="ml">ML</option>
           <option value="piece">Piece</option>
+          <option value="pack">Pack</option>
         </select>
 
         {/* Description */}

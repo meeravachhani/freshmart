@@ -40,13 +40,14 @@ export default function Checkout() {
     try {
       setLoading(true);
 
-      const items = cart.map((i) => ({
+      const products = cart.map((i) => ({
         productId: i._id,
         quantity: i.qty,
       }));
 
       await API.post("/orders/place", {
-        items,
+        // items,
+        products,
         totalAmount: total,
         address: selectedAddress,
         paymentMethod,

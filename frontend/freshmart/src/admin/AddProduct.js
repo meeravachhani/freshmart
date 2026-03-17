@@ -126,6 +126,7 @@ export default function AddProduct() {
         <option value="liter">Liter</option>
         <option value="ml">ML</option>
         <option value="piece">Piece</option>
+        <option value="pack">Pack</option>
       </select>
 
       <textarea className="form-control mb-3"

@@ -942,15 +942,15 @@ body {
 
 
 /* =====start ADMIN DASHBOARD root css===== */
-.admin-dashboard {
+/* .admin-dashboard {
   min-height: 100vh;
   background: linear-gradient(135deg, #f3fdf7, #e9f7ef);
   padding: 30px;
   font-family: "Segoe UI", sans-serif;
-}
+} */
 
 /* ===== HEADER ===== */
-.dashboard-header {
+/* .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -974,17 +974,17 @@ body {
 
 .dashboard-header button:hover {
   background: #c0392b;
-}
+} */
 
 /* ===== ADMIN INFO ===== */
-.admin-info {
+/* .admin-info {
   color: #2c3e50;
   margin-bottom: 25px;
   font-size: 15px;
-}
+} */
 
 /* ===== STATS CARDS ===== */
-.dashboard-cards {
+/* .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -1004,10 +1004,10 @@ body {
 
 .dashboard-cards .card:hover {
   transform: translateY(-5px);
-}
+} */
 
 /* ===== QUICK ACTIONS ===== */
-.quick-actions {
+/* .quick-actions {
   margin-top: 35px;
   display: flex;
   flex-wrap: wrap;
@@ -1028,10 +1028,10 @@ body {
 
 .quick-actions button:hover {
   background: linear-gradient(135deg, #1e8449, #27ae60);
-}
+} */
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
     align-items: flex-start;
@@ -1041,7 +1041,10 @@ body {
   .quick-actions {
     flex-direction: column;
   }
-}
+} */
+
+
+
 /* admindeshbord end css */
 
 
