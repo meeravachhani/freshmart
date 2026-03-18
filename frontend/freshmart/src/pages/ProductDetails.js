@@ -698,10 +698,10 @@ export default function ProductDetails() {
 
                       {/* ⭐ RATING */}
 
-                      <Rating
+                      {/* <Rating
                         value={item.averageRating || 0}
                         readonly
-                      />
+                      /> */}
 
                       <p className="small text-muted mb-1">
                         ({avg} ⭐ | {count})
