@@ -91,10 +91,12 @@
   font-size: 14px;
   transition: background 0.2s ease;
   cursor: pointer;
+  color: #28a745;
 }
 
 .custom-dropdown button:hover {
-  background: #f0f8f0;
+  /* background: #f0f8f0; */
+  background: #a1eeba;
 }
 
 .custom-dropdown button.text-danger:hover {

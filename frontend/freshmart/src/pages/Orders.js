@@ -312,7 +312,7 @@ export default function Orders() {
                   <p className="order-total">
                     Total ₹{productTotal}
                   </p>
-
+     
                 </div>
 
               </div>

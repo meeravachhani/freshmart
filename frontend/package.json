@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "google-auth-library": "^10.6.2",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^8.0.3",
     "react-scripts": "^5.0.1"
   }
 }
