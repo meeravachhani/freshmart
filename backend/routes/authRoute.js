@@ -226,6 +226,35 @@ router.post("/forgot-password", async (req, res) => {
   }
 });
 
+
+
+/* ================= ADMIN REGISTER ================= */
+router.post("/admin/register", async (req, res) => {
+  const { name, email, password, adminKey,mobile,city,dob } = req.body;
+
+  if (adminKey !== process.env.ADMIN_SECRET_KEY) {
+    return res.status(401).json({ message: "Invalid admin key" });
+  }
+
+  const exist = await User.findOne({ email });
+  if (exist) {
+    return res.status(400).json({ message: "Admin already exists" });
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  await User.create({
+    name,
+    email,
+    password: hashedPassword,
+    role: "admin",
+    mobile,
+    dob,city
+  });
+
+  res.json({ message: "Admin registered successfully" });
+});
+
 /* ================= RESET PASSWORD ================= */
 router.post("/reset-password/:token", async (req, res) => {
   try {
@@ -258,7 +287,7 @@ router.post("/reset-password/:token", async (req, res) => {
 /* ================= USER REGISTER ================= */
 router.post("/register", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password,city,mobile,dob } = req.body;
 
     const exist = await User.findOne({ email });
     if (exist) {
@@ -272,6 +301,9 @@ router.post("/register", async (req, res) => {
       email,
       password: hashedPassword,
       role: "user",   // normal user
+      city,
+      mobile,
+      dob,
     });
 
     res.json({ message: "User registered successfully" });

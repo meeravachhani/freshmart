@@ -70,8 +70,8 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ForgotPassword from "./pages/ForgotPassword"; // 🔥 New
-import ResetPassword from "./pages/ResetPassword";   // 🔥 New
+// import ForgotPassword from "./pages/ForgotPassword"; 
+// import ResetPassword from "./pages/ResetPassword";   
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
@@ -80,8 +80,9 @@ import Orders from "./pages/Orders";
 import Wishlist from "./pages/Wishlist";
 import Address from "./pages/Address";
 import Profile from "./pages/Profile";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import PaymentFailed from "./pages/PaymentFailed";
+// import PaymentSuccess from "./pages/PaymentSuccess";
+// import PaymentFailed from "./pages/PaymentFailed";
+
 // --- ADMIN PAGES ---
 import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
@@ -106,8 +107,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        {/* <Route path="/forgot-password" element={<ForgotPassword />} /> */}
+        {/* <Route path="/reset-password/:token" element={<ResetPassword />} /> */}
         
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
@@ -117,8 +118,8 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/address" element={<Address />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
-        <Route path="/payment-failed" element={<PaymentFailed />} />
+        {/* <Route path="/payment-success" element={<PaymentSuccess />} /> */}
+        {/* <Route path="/payment-failed" element={<PaymentFailed />} /> */}
         
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />

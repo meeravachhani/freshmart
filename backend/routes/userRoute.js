@@ -14,10 +14,13 @@ router.get("/me", auth, async (req, res) => {
 // 🔹 UPDATE PROFILE
 router.put("/me", auth, async (req, res) => {
   try {
-    const { name, email } = req.body;
+    const { name, email,city,mobile,dob } = req.body;
 
     req.user.name = name;
     req.user.email = email;
+    req.user.city = city;
+    req.user.mobile = mobile;
+    req.user.dob = dob;
 
     await req.user.save();
 
