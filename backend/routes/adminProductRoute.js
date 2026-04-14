@@ -6,10 +6,10 @@ const upload = require("../middleware/upload");
 
 const router = express.Router();
 
-/* TEST ROUTE */
-router.get("/test", (req, res) => {
-  res.send("Admin Product Route Working ✅");
-});
+// /* TEST ROUTE */
+// router.get("/test", (req, res) => {
+//   res.send("Admin Product Route Working ✅");
+// });
 
 /* ADD PRODUCT */
 router.post("/", auth, admin, upload.single("image"), async (req, res) => {

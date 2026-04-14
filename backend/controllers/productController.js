@@ -6,7 +6,7 @@ exports.createProduct = async (req, res) => {
   try {
     const product = await Product.create({
       ...req.body,
-      image: req.file ? req.file.path : "", // 🔁 CHANGED (safe check)
+      image: req.file ? req.file.path : "", 
     });
 
     res.status(201).json(product);

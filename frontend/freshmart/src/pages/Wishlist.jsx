@@ -97,7 +97,7 @@ export default function Wishlist() {
 
   return (
     <div className="container my-5">
-      <h3 className="mb-4">My Wishlist</h3>
+      <h3 className="mb-4 products-title">My Wishlist</h3>
 
       <div className="row">
         {items.map((item) => (

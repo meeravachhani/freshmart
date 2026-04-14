@@ -19,7 +19,6 @@ router.get("/", auth, admin, async (req, res) => {
 });
 
 
-// routes/adminOrderRoute.js
 router.put("/:id/status", auth, admin, async (req, res) => {
   const order = await Order.findById(req.params.id);
   order.status = req.body.status;
